@@ -1,1 +1,257 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sanjay Papaiahgari — Personal Website</title>
+  <meta name="description" content="Personal website of Sanjay Papaiahgari: resume, projects, experience, and contact."/>
+  <meta name="theme-color" content="#0ea5e9"/>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Sanjay Papaiahgari — Personal Website" />
+  <meta property="og:description" content="Resume, projects, and contact info." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io" />
+  <meta property="og:image" content="/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON‑LD Schema.org: Person -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sanjay Papaiahgari",
+    "url": "https://YOUR-USERNAME.github.io/",
+    "jobTitle": "Software Engineer",
+    "sameAs": [
+      "https://github.com/YOUR-USERNAME",
+      "https://www.linkedin.com/in/YOUR-LINKEDIN"
+    ]
+  }
+  </script>
+
+  <!-- Fonts (optional; replace if needed) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --panel: #0f172a;
+      --text: #e5e7eb;
+      --muted:#94a3b8;
+      --brand:#38bdf8; /* sky-400 */
+      --accent:#22d3ee; /* cyan-400 */
+      --ring: rgba(34,211,238,.6);
+      --card:#111827;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f8fafc; --panel:#ffffff; --text:#0f172a; --muted:#475569; --brand:#0284c7; --accent:#06b6d4; --ring: rgba(2,132,199,.25); --card:#ffffff;
+      }
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6}
+    a{color:var(--brand); text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px; margin:0 auto; padding:0 1rem}
+    header{position:sticky; top:0; backdrop-filter:saturate(180%) blur(8px); background:color-mix(in oklab, var(--panel), transparent 30%); border-bottom:1px solid color-mix(in oklab, var(--muted), transparent 80%); z-index:50}
+    .nav{display:flex; align-items:center; justify-content:space-between; padding:0.8rem 0}
+    .brand{display:flex; gap:.6rem; align-items:center; font-weight:700}
+    .dot{width:10px;height:10px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--accent))}
+    .menu{display:flex; gap:1rem}
+    .menu a{padding:.4rem .6rem; border-radius:8px}
+    .menu a:focus-visible{outline:2px solid var(--ring); outline-offset:2px}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.6rem .9rem; border-radius:10px; border:1px solid color-mix(in oklab, var(--muted), transparent 70%); background:linear-gradient(180deg, color-mix(in oklab, var(--panel), transparent 30%), var(--panel)); box-shadow: 0 1px 0 rgba(255,255,255,.06) inset, 0 8px 24px rgba(2,8,23,.35)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn:active{transform:translateY(0)}
+    .hero{padding:5rem 0 3rem; display:grid; grid-template-columns:1.2fr .8fr; gap:2rem; align-items:center}
+    .card{background:var(--card); border:1px solid color-mix(in oklab, var(--muted), transparent 75%); border-radius:18px; padding:1.2rem}
+    .pill{display:inline-flex; gap:.4rem; align-items:center; border:1px dashed color-mix(in oklab, var(--brand), transparent 40%); color:var(--muted); padding:.25rem .55rem; border-radius:999px; font-size:.9rem}
+    h1{font-size:clamp(1.8rem, 2.4rem + 1vw, 3.2rem); line-height:1.15; margin:.25rem 0 1rem}
+    h2{font-size:1.5rem; margin:0 0 .5rem}
+    p{margin:.3rem 0 .8rem}
+    .grid{display:grid; gap:1rem}
+    .grid.projects{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .footer{padding:2.5rem 0; color:var(--muted); font-size:.95rem}
+    .avatar{width:160px; height:160px; border-radius:18px; object-fit:cover; border:2px solid color-mix(in oklab, var(--brand), transparent 30%)}
+    .tag{font-size:.8rem; background:color-mix(in oklab, var(--brand), transparent 82%); color:var(--brand); padding:.25rem .5rem; border-radius:999px}
+    .row{display:flex; gap:.75rem; flex-wrap:wrap}
+    section{padding:2.2rem 0}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    .kbd{font-variant:all-small-caps; letter-spacing:.04em; font-size:.85rem; color:var(--muted)}
+    .resume-link{font-weight:600}
+    details{border:1px solid color-mix(in oklab, var(--muted), transparent 75%); border-radius:12px; padding:.8rem 1rem}
+
+    @media (max-width: 900px){
+      .hero{grid-template-columns:1fr}
+      header{position:static}
+    }
+  </style>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <div class="brand"><span class="dot" aria-hidden="true"></span><span>Sanjay Papaiahgari</span></div>
+      <nav class="menu" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn" href="/resume.pdf" download aria-label="Download Resume">⬇ Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="pill">Hi there! 👋</span>
+        <h1>Building reliable backends and scalable AI products.</h1>
+        <p>I’m <strong>Sanjay</strong>, a software engineer focused on backend systems, data platforms, and ML tooling. I love Python, distributed systems, and clean API design.</p>
+        <div class="row">
+          <a class="btn" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn" href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="mailto:you@example.com">Email</a>
+        </div>
+        <p class="kbd">Tip: Press <kbd>R</kbd> to open the resume.</p>
+      </div>
+      <div class="card" aria-label="Profile photo">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/9919?s=200&v=4" alt="Profile headshot" />
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <h2>Highlighted Projects</h2>
+      <div class="grid projects" id="project-grid"></div>
+      <details>
+        <summary>How to update projects?</summary>
+        <p>Open <code>index.html</code> in a text editor and edit the <code>projects</code> array in the script at the bottom. Push changes to GitHub Pages.</p>
+      </details>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="grid">
+        <article class="card">
+          <header>
+            <div class="row" style="justify-content:space-between">
+              <strong>Senior Software Engineer · Your Company</strong>
+              <span class="tag">2023 — Present</span>
+            </div>
+          </header>
+          <ul>
+            <li>Designed and scaled event-driven services on Kafka and Kubernetes handling 50k+ msgs/sec.</li>
+            <li>Built robust Python/FASTAPI microservices with observability (OpenTelemetry + Prometheus).</li>
+            <li>Led API design reviews and improved release safety with GitHub Actions.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <header>
+            <div class="row" style="justify-content:space-between">
+              <strong>Software Engineer · Previous Co.</strong>
+              <span class="tag">2020 — 2023</span>
+            </div>
+          </header>
+          <ul>
+            <li>Implemented ML-powered ranking for search with feature stores and batch/stream pipelines.</li>
+            <li>Optimized PostgreSQL queries and caching to cut p95 latency by 40%.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="row">
+        <span class="tag">Python</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Kafka</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Kubernetes</span>
+        <span class="tag">AWS</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">System Design</span>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Best way to reach me is email: <a href="mailto:you@example.com">you@example.com</a>. I’m open to roles in backend/ML platforms and system design consulting.</p>
+    </section>
+
+    <section aria-label="Download resume">
+      <a class="btn resume-link" href="/resume.pdf" download>⬇ Download my resume (PDF)</a>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div style="display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap">
+          <span>© <span id="year"></span> Sanjay Papaiahgari</span>
+          <span>Built with ♥ and GitHub Pages</span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // Keyboard shortcut: press R to open resume
+    document.addEventListener('keydown', (e)=>{ if(e.key.toLowerCase()==='r'){ window.location.href='/resume.pdf'; }});
+
+    // Projects data — edit this!
+    const projects = [
+      {
+        title: 'Multimodal Search Engine',
+        href: 'https://github.com/YOUR-USERNAME/multimodal-search',
+        description: 'Built a vector + keyword hybrid search with RAG, embeddings, and image search.',
+        tech: ['Python','FastAPI','Pgvector','OpenAI','Docker']
+      },
+      {
+        title: 'AI Job Search Agent',
+        href: 'https://github.com/YOUR-USERNAME/ai-job-agent',
+        description: 'Agent that scrapes, filters, and auto-applies to roles with tailored cover letters.',
+        tech: ['Python','Playwright','LLM']
+      },
+      {
+        title: 'Top‑K Trending Hashtags',
+        href: 'https://github.com/YOUR-USERNAME/trending-hashtags',
+        description: 'Streaming system that maintains top‑K trending hashtags with windowed counts.',
+        tech: ['Kafka','Flink','Python']
+      }
+    ];
+
+    const grid = document.getElementById('project-grid');
+    function el(tag, attrs={}, children=[]) {
+      const node = document.createElement(tag);
+      for (const [k,v] of Object.entries(attrs)) {
+        if (k === 'class') node.className = v; else if (k === 'href') node.setAttribute('href', v); else node[k] = v;
+      }
+      for (const child of children) node.append(child);
+      return node;
+    }
+
+    projects.forEach(p => {
+      const card = el('article', {class:'card'});
+      const head = el('div', {class:'row', style:'justify-content:space-between; align-items:center'});
+      head.append(el('strong', {textContent: p.title}));
+      head.append(el('a', {href:p.href, target:'_blank', rel:'noopener', class:'btn', textContent:'View'}));
+      const desc = el('p', {textContent: p.description});
+      const tags = el('div', {class:'row'});
+      p.tech.forEach(t => tags.append(el('span', {class:'tag', textContent: t})));
+      card.append(head, desc, tags);
+      grid.append(card);
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
